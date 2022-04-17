@@ -9,7 +9,7 @@
 - JQuery
 
 ## Структура БД
-![erDiagram](https://i.imgur.com/U8uQbt0.jpeg)
+![erDiagram](https://i.imgur.com/lVlYTdj.png)
 
 ## Установка
 Если вам необходим мой проект, то вот что вам необходимо сделать
