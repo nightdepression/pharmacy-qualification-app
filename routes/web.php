@@ -11,7 +11,6 @@
 |
 */
 
-//frontend pages route
 Route::get('/', 'PageController@index')->name('index');
 
 Route::get('/pages/category', 'PageController@category')->name('category');
@@ -25,17 +24,15 @@ Route::get('/pages/single/{id}', 'PageController@single_show')->name('single.sho
 Route::get('/pages/contact', 'PageController@contact')->name('contact');
 
 Route::get('/search', 'PageController@search')->name('search');
-// Route::resource('category', 'CategoryController');
-// category.index, category.create,
 
-//admin pages route
+// Админка
 Route::group(['prefix' => 'admin'], function(){
 	Route::get('/', 'AdminPagesController@index')->name('admin.index');
 	Route::get('/login', 'Auth\Admin\LoginController@showLoginForm')->name('admin.login');
 	Route::post('/login/submit', 'Auth\Admin\LoginController@login')->name('admin.login.submit');
 	Route::post('/logout/submit', 'Auth\Admin\LoginController@logout')->name('admin.logout');
 
-	//category pages route
+	// Категории
 	Route::group(['prefix' => 'category'], function(){
 		Route::get('/', 'CategoryController@show')->name('admin.category.index');
 		Route::get('/create', 'CategoryController@create')->name('admin.category.create');
@@ -45,7 +42,7 @@ Route::group(['prefix' => 'admin'], function(){
 		Route::post('/delete/{id}', 'CategoryController@destroy')->name('admin.category.delete');
 	});
 
-	//brand pages route
+	// Бренды
 	Route::group(['prefix' => 'brand'], function(){
 		Route::get('/', 'BrandController@show')->name('admin.brand.index');
 		Route::get('/create', 'BrandController@create')->name('admin.brand.create');
@@ -55,7 +52,7 @@ Route::group(['prefix' => 'admin'], function(){
 		Route::post('/delete/{id}', 'BrandController@destroy')->name('admin.brand.delete');
 	});
 
-	//product pages route
+	// Продукты
 	Route::group(['prefix' => 'product'], function(){
 		Route::get('/', 'ProductController@index')->name('admin.product.index');
 		Route::get('/create', 'ProductController@create')->name('admin.product.create');
@@ -66,7 +63,7 @@ Route::group(['prefix' => 'admin'], function(){
 
 	});
 
-	//order pages route
+	// Заказы
 	Route::group(['prefix' => 'order'], function(){
 		Route::get('/', 'OrderController@index')->name('admin.order.index');
 		Route::get('/single/{id}', 'OrderController@show')->name('admin.order.show');
@@ -76,14 +73,14 @@ Route::group(['prefix' => 'admin'], function(){
 
 	});
 
-	//user pages route
+	// Страницы пользователя
 	Route::group(['prefix' => 'user'], function(){
 		Route::get('/', 'UserController@index')->name('admin.user.index');
 	});
 });
 
 
-//cart route
+// Корзина
 Route::group(['prefix' => 'carts'], function(){
 	Route::get('/', 'CartController@index')->name('carts');
 	Route::post('/store', 'CartController@store')->name('cart.store');
@@ -92,14 +89,11 @@ Route::group(['prefix' => 'carts'], function(){
 });
 
 
-//checkout route
+// Оплата
 Route::group(['prefix' => 'checkout'], function(){
 	Route::get('/', 'CheckoutController@index')->name('checkout');
 	Route::post('/store', 'CheckoutController@store')->name('checkout.store');
 });
-
-// Route::resource('pro_image', 'ProductImageController');
-// Route::('pro_image/search', 'ProductImageController@search')->name('pro_image.search');
 
 Auth::routes();
 
