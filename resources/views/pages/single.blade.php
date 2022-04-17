@@ -53,13 +53,13 @@
 						<h2>{{ $product->title }}</h2>
 						<p>{{ $product->description }}</p>
 						<div class="tab_title">
-							<h4>{{ $product->quantity < 1 ? ' Отсутствует в наличии' : $product->quantity . ' Есть в наличии'}}</h4>
+							<h4>{{ $product->quantity < 1 ? ' Отсутствует' : $product->quantity . ' | В наличии'}}</h4>
 						</div>
 					</div>
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 						<span class="ti-truck"></span><span>бесплатная доставка</span>
 					</div>
-					<div class="product_price">${{ $product->price }}</div>
+					<div class="product_price">₽ {{ $product->price }}</div>
 					<ul class="star_rating">
 						<li><i class="fa fa-star" aria-hidden="true"></i></li>
 						<li><i class="fa fa-star" aria-hidden="true"></i></li>

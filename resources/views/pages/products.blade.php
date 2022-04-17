@@ -8,7 +8,7 @@
 			<div class="favorite favorite_left"></div>
 			<div class="product_info">
 				<h6 class="product_name"><a href="{{ route('single.show' , $product->id) }}">{{ $product->title }}</a></h6>
-				<div class="product_price">${{ $product->price }}</div>
+				<div class="product_price">₽ {{ $product->price }}</div>
 			</div>
 		</div>
 		<div class="cat_red_button cat_add_to_cart_button red_button add_to_cart_button">
