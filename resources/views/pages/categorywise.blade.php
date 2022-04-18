@@ -90,7 +90,7 @@
 									@else
 
 										<div class="alert alert warning"> 
-											Нет продуктов в этой категории :(
+											<p style="padding: 75px;">Нет продуктов в этой категории :(</p>
 										</div>
 
 									@endif

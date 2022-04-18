@@ -51,26 +51,10 @@ class OrderController extends Controller
         }
         $order->save();
 
-        Session()->flash('success' , 'Order Delivery Status Changed Successfully !!!');
+        Session()->flash('success' , 'Заказ доставлен :)');
         return back();
     }
 
-    // public function paid($id)
-    // {
-    //     $order = Order::find($id);
-
-    //     if($order->paid)
-    //     {
-    //         $order->paid = 0;
-    //     }else{
-    //         $order->paid = 1;
-    //     }
-    //     $order->save();
-
-    //     Session()->flash('success' , 'Payment Completed Successfully !!!');
-    //     return redirect()->route('admin.order.index');
-    // }
-    
 
     /**
      * Remove the specified resource from storage.
@@ -86,7 +70,7 @@ class OrderController extends Controller
             $order->delete();
         }
 
-        Session()->flash('success' , 'Order Deleted Successfully !!!');
+        Session()->flash('success' , 'Заказ удален :)');
         return back();
     }
 }

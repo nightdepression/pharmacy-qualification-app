@@ -86,7 +86,7 @@
 														<div class="product_price">₽ {{ $product->price }}</div>
 													</div>
 												</div>
-												<div class="cat_red_button cat_add_to_cart_button"><a href="#">add to cart</a></div>
+												<div class="cat_red_button cat_add_to_cart_button"><a href="#">Добавить в корзину</a></div>
 											</div>
 
 										@endforeach

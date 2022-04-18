@@ -47,11 +47,11 @@
 										<button type="submit" class="btn alert-success">Обновить</button>
 									</form>
 								</td>
-								<td>{{ $cart->product->price }} TK</td>
+								<td>{{ $cart->product->price }} &#8381;</td>
 								@php
 									$total_price += $cart->product->price * $cart->product_quantity;
 								@endphp
-								<td>{{ $cart->product->price * $cart->product_quantity}} TK</td>
+								<td>{{ $cart->product->price * $cart->product_quantity}} &#8381;</td>
 								<td> 
 									<form class="form-inline" action="{{ route('cart.delete', $cart->id) }}" method="post"> 
 										@csrf

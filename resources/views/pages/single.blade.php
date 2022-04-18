@@ -262,7 +262,7 @@
 			let id = $(this).attr('value');
 
 			$.ajax({
-				url: 'http://localhost:8000/carts/store',
+				url: 'http://webpharm.ae/public/carts/store',
 				method: 'post',
             	data: { product_id: id },
             	headers: {
