@@ -6,7 +6,7 @@
 	    <div class="row page-title-header">
 	       	<div class="col-12">
 	         	<div class="page-header">
-	            	<h4 class="page-title">Add Product</h4>
+	            	<h4 class="page-title">Добавить продукт</h4>
 	          	</div>
 	        </div>
 	    </div>
@@ -20,48 +20,48 @@
                 <form class="forms-sample" action="{{ route('admin.product.store') }}" method="post" enctype="multipart/form-data">
                   @csrf
                   <div class="form-group">
-                    <label for="exampleInputName1">Name</label>
-                    <input type="text" class="form-control" id="exampleInputName1" name ="title" placeholder="Name" value="{{old('title')}}">
+                    <label for="exampleInputName1">Имя</label>
+                    <input type="text" class="form-control" id="exampleInputName1" name ="title" placeholder="Имя" value="{{old('title')}}">
                   </div>
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Select Category</label>
+                    <label for="exampleFormControlSelect1">Выберите категорию</label>
                     <select name="category_id" id="exampleFormControlSelect1" class="form-control">
-                      <option value="">Select a Category</option> 
+                      <option value="">Выберите категорию</option>
                       @foreach(App\Category::orderBy('id' , 'desc')->get() as $cat)
                         <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Select Brand</label>
+                    <label for="exampleFormControlSelect1">Выберите бренд</label>
                     <select name="brand_id" id="exampleFormControlSelect1" class="form-control"> 
-                      <option value="">Select a Brand</option> 
+                      <option value="">Выберите бренд</option>
                       @foreach(App\Brand::orderBy('id' , 'desc')->get() as $brad)
                         <option value="{{ $brad->id }}">{{ $brad->name }}</option>
                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleTextarea1">Description</label>
+                    <label for="exampleTextarea1">Описание</label>
                     <textarea class="form-control" id="exampleTextarea1" rows="4" name="description"></textarea>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputName1">Quantity</label>
-                    <input type="number" class="form-control" id="exampleInputName1" name ="quantity" placeholder="Quantity">
+                    <label for="exampleInputName1">Количество</label>
+                    <input type="number" class="form-control" id="exampleInputName1" name ="quantity" placeholder="Количество">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputName1">Price</label>
-                    <input type="text" class="form-control" id="exampleInputName1" name ="price" placeholder="Price">
+                    <label for="exampleInputName1">Цена</label>
+                    <input type="text" class="form-control" id="exampleInputName1" name ="price" placeholder="Цена">
                   </div>
                   <div class="form-group">
-                    <label>Image</label>
+                    <label>Изображение</label>
                     <div class="input-group col-xs-4">
-                      <input type="file" class="form-control file-upload-info" name="image" placeholder="Upload Image">
+                      <input type="file" class="form-control file-upload-info" name="image" placeholder="Загрузить картинку">
                     </div>
                   </div>
 
-                  <button type="submit" class="btn btn-success mr-2">Add</button>
-                  <button class="btn btn-light"><a href="{{route('admin.product.create')}}">Cancel</a></button>
+                  <button type="submit" class="btn btn-success mr-2">Добавить</button>
+                  <button class="btn btn-light"><a href="{{route('admin.product.create')}}">Отменить</a></button>
                 </form>
               </div>
             </div>

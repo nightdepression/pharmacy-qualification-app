@@ -27,7 +27,7 @@
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url({{asset('images/categories/' . $cat->image)}})">
 						<div class="banner_category">
-							<a href="{{ route('category') }}">{{  $cat->name }}'s</a>
+							<a href="{{ route('category') }}">{{  $cat->name }}</a>
 						</div>
 					</div>
 				</div>
@@ -51,7 +51,7 @@
 				<div class="col text-center">
 					<div class="new_arrivals_sorting">
 						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">Все</li>
 							@foreach( $category as $cat )
 								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter="#item-{{ $cat->id }}">{{ $cat->name }}</li>
 							@endforeach

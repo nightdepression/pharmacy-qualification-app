@@ -79,7 +79,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        Session()->flash('success' , 'Product Added Successfully !!!');
+        Session()->flash('success' , 'Товар успешно добавлен!');
         return redirect()->route('admin.product.index');
     }
 
@@ -111,7 +111,6 @@ class ProductController extends Controller
             'quantity' => 'required',
             'price' => 'required',
             'description' => 'required',
-            // 'status' => 'required',
         ]);
 
         $product = Product::find($id);
@@ -122,27 +121,10 @@ class ProductController extends Controller
         $product->quantity = $req->quantity;
         $product->price = $req->price;
         $product->description = $req->description;
-        
-        // $product->status = $req->status;
-
-        // if ($req -> hasFile('image')) {
-
-        //     if(File::exists('images/products/' . $product->image))
-        //     {
-        //         File::delete('images/products/' . $product->image);
-        //     }
-            
-        //     $image = $req -> file('image');
-        //     $imgName = time() . '.' . $image -> getClientOriginalExtension();
-        //     $location = public_path('images/products/' . $imgName);
-        //     Image::make($image) -> save($location);
-
-        //     $product->image = $imgName;
-        // }
 
         $product->save();
 
-        Session()->flash('success' , 'Product Updated Successfully !!!');
+        Session()->flash('success' , 'Товар успешно обновлён!');
         return redirect()->route('admin.product.index');
     }
 
@@ -160,7 +142,7 @@ class ProductController extends Controller
             $product -> delete();
         }
 
-        Session()->flash('success' , 'Product Deleted Successfully !!!');
+        Session()->flash('success' , 'Товар успешно удалён!');
         return back();
     }
 }

@@ -6,7 +6,7 @@
 	    <div class="row page-title-header">
 	       	<div class="col-12">
 	         	<div class="page-header">
-	            	<h4 class="page-title">Update Category</h4>
+	            	<h4 class="page-title">Обновить категорию</h4>
 	          	</div>
 	        </div>
 	    </div>
@@ -20,12 +20,12 @@
                 <form class="forms-sample" action="{{ route('admin.category.update' , $category->id) }}" method="post" enctype="multipart/form-data">
                   @csrf
                   <div class="form-group">
-                    <label for="exampleInputName1">Name</label>
+                    <label for="exampleInputName1">Имя</label>
                     <input type="text" class="form-control" id="exampleInputName1" name ="name" value="{{ $category -> name }}">
                   </div>
 
                   {{-- <div class="form-group">
-                    <label>Image</label>
+                    <label>Изображение</label>
                     <div class="input-group col-xs-12">
                       <img src="{{ asset('images/categories/' . $category -> image) }}" height="100" width="100" alt="">
                     </div>  
@@ -37,27 +37,27 @@
                   </div> --}}
 
                   <div class="form-group">
-                    <label for="exampleTextarea1">Description</label>
+                    <label for="exampleTextarea1">Описание</label>
                     <textarea class="form-control" id="exampleTextarea1" rows="4" name="description"> {{ $category -> description }}</textarea>
                   </div>
 
                   {{-- <div class="form-group">
-                    <label for="exampleFormControlSelect1">Status</label>
+                    <label for="exampleFormControlSelect1">Статус</label>
                     <select name="status" id="exampleFormControlSelect1" class="form-control"> 
-                      <option value="">Select Status</option>
+                      <option value="">Выберите статус</option>
 
                       @if($category->status == "Active")
                         <option value="" selected>{{ $category -> status }}</option>
-                        <option value="Unavailable">Unavailable</option>
+                        <option value="Unavailable">Недоступно</option>
                       @elseif($category->status == "Unavailable")
-                        <option value="Active">Active</option>
+                        <option value="Active">Активно</option>
                         <option value="" selected>{{ $category -> status }}</option>
                       @endif
                     </select>
                   </div> --}}
                   
-                  <button type="submit" class="btn btn-success mr-2">Update</button>
-                  <button class="btn btn-light"><a href="{{route('admin.category.index')}}">Cancel</a></button>
+                  <button type="submit" class="btn btn-success mr-2">Обновить</button>
+                  <button class="btn btn-light"><a href="{{route('admin.category.index')}}">Отменить</a></button>
                 </form>
               </div>
             </div>

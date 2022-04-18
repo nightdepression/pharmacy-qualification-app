@@ -2,15 +2,13 @@
 
 @section('content')          
 
-		<!-- Page Title Header Starts-->
 	    <div class="row page-title-header">
 	       	<div class="col-12">
 	         	<div class="page-header">
-	            	<h4 class="page-title">User List</h4>
+	            	<h4 class="page-title">Список пользователей</h4>
 	          	</div>
 	        </div>
 	    </div>
-	    <!-- Page Title Header Ends-->
 		
         <div class="row">
           <div class="col-md-12 grid-margin">
@@ -20,13 +18,13 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th> Serial No. </th>
-                      <th> User ID. </th>
-                      <th> Name </th>
-                      <th> Email </th>
-                      <th> Phone No.</th>
-                      <th> Address </th>
-                      <th> Status </th>
+                      <th> Номер </th>
+                      <th> ID Пользователя </th>
+                      <th> Имя </th>
+                      <th> Почта </th>
+                      <th> Телефон.</th>
+                      <th> Адрес </th>
+                      <th> Статус </th>
                     </tr>
                   </thead>
                   <tbody>

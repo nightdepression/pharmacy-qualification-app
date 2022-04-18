@@ -2,15 +2,13 @@
 
 @section('content')          
 
-		<!-- Page Title Header Starts-->
 	    <div class="row page-title-header">
 	       	<div class="col-12">
 	         	<div class="page-header">
-	            	<h4 class="page-title">Products</h4>
+	            	<h4 class="page-title">Продукты</h4>
 	          	</div>
 	        </div>
 	    </div>
-	    <!-- Page Title Header Ends-->
 		
         <div class="row">
           <div class="col-md-12 grid-margin">
@@ -20,13 +18,13 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th> Name </th>
-                      <th> Category </th>
-                      <th> Brand </th>
-                      <th> Quantity </th>
-                      <th> Price </th>
-                      <th> Status </th>
-                      <th> Action </th>
+                      <th> Имя </th>
+                      <th> Категория </th>
+                      <th> Бренд </th>
+                      <th> Количество </th>
+                      <th> Цена </th>
+                      <th> Статус </th>
+                      <th> Действие </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -46,14 +44,14 @@
           						@endif
                       </td>
                       <td>
-      						<a href="{{ route('admin.product.edit' , $item->id) }}" class="btn btn-primary">Edit</a>
-      						<a href="#deleteModal{{ $item->id }}" data-toggle="modal" class="btn btn-danger">Delete</a>
+      						<a href="{{ route('admin.product.edit' , $item->id) }}" class="btn btn-primary">Изменить</a>
+      						<a href="#deleteModal{{ $item->id }}" data-toggle="modal" class="btn btn-danger">Удалить</a>
 
                   <div class="modal fade" id="deleteModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header"> 
-                          <h5 class="modal-title" id="exampleModalLabel">Are you sure want to delete?</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">Вы точно хотите удалить?</h5>
                           <button type="buttone" class="close" data-dismiss="modal" aria-label="Close"> 
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -61,9 +59,9 @@
                         <div class="modal-footer"> 
                           <form action="{{ route('admin.product.delete' , $item->id) }}" method="post"> 
                               {{ csrf_field() }}
-                              <button type="submit" class="btn btn-danger">Permanent Delete</button>
+                              <button type="submit" class="btn btn-danger">Удалить</button>
                           </form>
-                          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Отменить</button>
                         </div>
                           
                         </div>

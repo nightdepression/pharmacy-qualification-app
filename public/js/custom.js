@@ -1,30 +1,6 @@
-/* JS Document */
-
-/******************************
-
-[Table of Contents]
-
-1. Vars and Inits
-2. Set Header
-3. Init Menu
-4. Init Timer
-5. Init Favorite
-6. Init Fix Product Border
-7. Init Isotope Filtering
-8. Init Slider
-
-
-******************************/
-
 jQuery(document).ready(function($)
 {
 	"use strict";
-
-	/* 
-
-	1. Vars and Inits
-
-	*/
 
 	var header = $('.header');
 	var topNav = $('.top_nav')
@@ -55,12 +31,6 @@ jQuery(document).ready(function($)
 	initIsotopeFiltering();
 	initSlider();
 
-	/* 
-
-	2. Set Header
-
-	*/
-
 	function setHeader()
 	{
 		if(window.innerWidth < 992)
@@ -90,12 +60,6 @@ jQuery(document).ready(function($)
 			closeMenu();
 		}
 	}
-
-	/* 
-
-	3. Init Menu
-
-	*/
 
 	function initMenu()
 	{
@@ -162,7 +126,6 @@ jQuery(document).ready(function($)
 	function openMenu()
 	{
 		menu.addClass('active');
-		// menu.css('right', "0");
 		fsOverlay.css('pointer-events', "auto");
 		menuActive = true;
 	}
@@ -174,26 +137,14 @@ jQuery(document).ready(function($)
 		menuActive = false;
 	}
 
-	/* 
-
-	4. Init Timer
-
-	*/
-
 	function initTimer()
     {
     	if($('.timer').length)
     	{
-    		// Uncomment line below and replace date
-	    	// var target_date = new Date("Dec 7, 2017").getTime();
-
-	    	// comment lines below
 	    	var date = new Date();
 	    	date.setDate(date.getDate() + 3);
 	    	var target_date = date.getTime();
-	    	//----------------------------------------
-	 
-			// variables for time units
+
 			var days, hours, minutes, seconds;
 
 			var d = $('#day');
@@ -203,11 +154,9 @@ jQuery(document).ready(function($)
 
 			setInterval(function ()
 			{
-			    // find the amount of "seconds" between now and target
 			    var current_date = new Date().getTime();
 			    var seconds_left = (target_date - current_date) / 1000;
 			 
-			    // do some time calculations
 			    days = parseInt(seconds_left / 86400);
 			    seconds_left = seconds_left % 86400;
 			     
@@ -217,7 +166,6 @@ jQuery(document).ready(function($)
 			    minutes = parseInt(seconds_left / 60);
 			    seconds = parseInt(seconds_left % 60);
 
-			    // display result
 			    d.text(days);
 			    h.text(hours);
 			    m.text(minutes);
@@ -226,12 +174,6 @@ jQuery(document).ready(function($)
 			}, 1000);
     	}	
     }
-
-    /* 
-
-	5. Init Favorite
-
-	*/
 
     function initFavorite()
     {
@@ -264,12 +206,6 @@ jQuery(document).ready(function($)
     		});
     	}
     }
-
-    /* 
-
-	6. Init Fix Product Border
-
-	*/
 
     function initFixProductBorder()
     {
@@ -336,8 +272,6 @@ jQuery(document).ready(function($)
 					product.css('border-right', 'none');
 				}
 			}
-
-			//if window width is larger than 991px
 			else
 			{
 				if(products.length < 5)
@@ -354,19 +288,12 @@ jQuery(document).ready(function($)
     	}
     }
 
-    /* 
-
-	7. Init Isotope Filtering
-
-	*/
-
     function initIsotopeFiltering()
     {
     	if($('.grid_sorting_button').length)
     	{
     		$('.grid_sorting_button').click(function()
 	    	{
-	    		// putting border fix inside of setTimeout because of the transition duration
 	    		setTimeout(function()
 		        {
 		        	initFixProductBorder();
@@ -390,12 +317,6 @@ jQuery(document).ready(function($)
 		    });
     	}
     }
-
-    /* 
-
-	8. Init Slider
-
-	*/
 
     function initSlider()
     {

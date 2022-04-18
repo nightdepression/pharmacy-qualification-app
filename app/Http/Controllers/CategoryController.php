@@ -51,7 +51,7 @@ class CategoryController extends Controller
 
         $category->save();
 
-        Session()->flash('success' , 'Category Added Successfully !!!');
+        Session()->flash('success' , 'Категория добавлена!');
         return redirect()->route('admin.category.index');
     }
 
@@ -99,24 +99,9 @@ class CategoryController extends Controller
         $category->name = $req->name;
         $category->description = $req->description;
 
-        // if ($req -> hasFile('image')) {
-
-        //     if(File::exists('images/categories/' . $category->image))
-        //     {
-        //         File::delete('images/categories/' . $category->image);
-        //     }
-            
-        //     $image = $req -> file('image');
-        //     $imgName = time() . '.' . $image -> getClientOriginalExtension();
-        //     $location = public_path('images/categories/' . $imgName);
-        //     Image::make($image) -> save($location);
-
-        //     $category->image = $imgName;
-        // }
-
         $category->save();
 
-        Session()->flash('success' , 'Category Updated Successfully !!!');
+        Session()->flash('success' , 'Категория обновлена!');
         return redirect()->route('admin.category.index');
     }
 
@@ -134,7 +119,7 @@ class CategoryController extends Controller
             $category -> delete();
         }
 
-        Session()->flash('success' , 'Category Deleted Successfully !!!');
+        Session()->flash('success' , 'Категория удалена!');
         return back();
     }
 }

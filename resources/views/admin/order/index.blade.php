@@ -6,7 +6,7 @@
       <div class="row page-title-header">
           <div class="col-12">
             <div class="page-header">
-                <h4 class="page-title">Orders</h4>
+                <h4 class="page-title">Заказы</h4>
               </div>
           </div>
       </div>
@@ -20,12 +20,12 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th> Serial No. </th>
-                      <th> Order ID </th>
-                      <th> Name </th>
-                      <th> Phone No. </th>
-                      <th> Status </th>
-                      <th> Action </th>
+                      <th> Номер </th>
+                      <th> Номер Заказа </th>
+                      <th> Имя </th>
+                      <th> Телефон </th>
+                      <th> Статус </th>
+                      <th> Действие </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -39,27 +39,22 @@
                       <td>
 
                         @if($order->delivered)
-                          <label class="badge badge-success">Delivered</label>
+                          <label class="badge badge-success">Доставлено</label>
                         @else
-                          <label class="badge badge-primary">Processing</label>
+                          <label class="badge badge-primary">В процессе</label>
                         @endif
 
-                        <!-- @if($order->paid)
-                          <label class="badge badge-success">Paid</label>
-                        @else
-                          <label class="badge badge-danger">Not Paid</label>
-                        @endif -->
                       </td>
                       <td>
-                  <a href="{{ route('admin.order.show', $order->id) }}" class="btn alert-primary">View Order</a>
+                  <a href="{{ route('admin.order.show', $order->id) }}" class="btn alert-primary">Посмотреть заказ</a>
 
-                  <a href="#deleteModal{{ $order->id }}" data-toggle="modal" class="btn btn-danger">Delete</a>
+                  <a href="#deleteModal{{ $order->id }}" data-toggle="modal" class="btn btn-danger">Удалить</a>
 
                   <div class="modal fade" id="deleteModal{{ $order->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header"> 
-                          <h5 class="modal-title" id="exampleModalLabel">Are you sure want to delete?</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">Вы точно хотите удалить?</h5>
                           <button type="buttone" class="close" data-dismiss="modal" aria-label="Close"> 
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -67,9 +62,9 @@
                         <div class="modal-footer"> 
                           <form action="{{ route('admin.order.delete' , $order->id) }}" method="post"> 
                               {{ csrf_field() }}
-                              <button type="submit" class="btn btn-danger">Permanent Delete</button>
+                              <button type="submit" class="btn btn-danger">Удалить</button>
                           </form>
-                          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Отменить</button>
                         </div>
                           
                         </div>
