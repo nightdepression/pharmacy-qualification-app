@@ -7,6 +7,8 @@
 - Vue.JS
 - JavaScript
 - JQuery
+- Переведенный готовый шаблон взятый из интернета и доработанный мной
+- Немного кода со StackOverflow <3
 
 ## Структура БД
 ![erDiagram](https://i.imgur.com/lVlYTdj.png)
